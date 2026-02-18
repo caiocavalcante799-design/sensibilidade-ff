@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Sensibilidade FF</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #111, #1e1e1e);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 20px #00ff99;
+}
+
+h1 {
+    color: #00ff99;
+}
+
+button {
+    background: #00ff99;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #00cc77;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔥 Gerador de Sensibilidade</h1>
+    <p>Clique para gerar sua sensi!</p>
+    <button onclick="gerarSensibilidade()">Gerar Sensibilidade</button>
+
+    <div class="result" id="resultado"></div>
+</div>
+
+<script>
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function gerarSensibilidade() {
+
+    let geral = random(80, 100);
+    let redDot = random(70, 100);
+    let mira2x = random(60, 95);
+    let mira4x = random(50, 90);
+    let awm = random(40, 80);
+    let dpi = random(400, 800);
+
+    document.getElementById("resultado").innerHTML = `
+        🎯 Geral: ${geral}<br>
+        🔴 Red Dot: ${redDot}<br>
+        🔭 Mira 2x: ${mira2x}<br>
+        🔎 Mira 4x: ${mira4x}<br>
+        🎯 AWM: ${awm}<br>
+        📱 DPI: ${dpi}
+    `;
+}
+</script>
+
+</body>
+</html>
